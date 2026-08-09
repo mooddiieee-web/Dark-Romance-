@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 23 Desires </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Poppins:wght@300;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #030303;
+            color: #d4af37;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 5%;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-style: italic;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 5px;
+            text-shadow: 0 0 30px rgba(255, 0, 85, 0.4);
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 0.75rem;
+            color: #ff0055;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .list-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .dare-input { display: none; }
+
+        .dare-row {
+            width: 100%;
+            perspective: 1200px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .dare-input:checked + .dare-row .card-inner {
+            transform: rotateX(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid #1a1a1a;
+        }
+
+        .front {
+            background: linear-gradient(135deg, #111, #000);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .front h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: #ff0055;
+            letter-spacing: 5px;
+        }
+
+        .back {
+            background: #080808;
+            transform: rotateX(180deg);
+            border: 1px solid #ff0055;
+            padding: 30px;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(255, 0, 85, 0.15);
+        }
+
+        .back h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .back p {
+            font-size: 0.95rem;
+            color: #d4af37;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .indicator {
+            position: absolute;
+            left: 20px;
+            width: 8px;
+            height: 8px;
+            background: #ff0055;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.5); }
+        }
+
+        footer { margin: 80px 0; opacity: 0.2; font-size: 0.7rem; }
+    </style>
+</head>
+<body>
+
+    <h1>The 23 Desires</h1>
+    <p class="subtitle">TAP TO UNLOCK EACH DESIRE</p>
+
+    <div class="list-container">
+        
+        <script>
+            const dares = [
+                { title: "Truth", text: "When you make me cum by kissing how you were feeling? like achivement or nothing 👁️👁️" },
+                { title: "Dare", text: "Call me  'Master-Harsh' Till the next day😤." },
+                { title: "Truth", text: "Yesterday which of my action get you turned on? Like fingering or boobie 👁️👁️" },
+                { title: "dare", text: "Hold mini Nayak and act like addicted of him while kissing him in horny horny way👅" },
+                { title: "Truth", text: "tell me the horniest and dark romance you you wanted do with me but hold back yesterday?👀" },
+                { title: "Dare", text: "talk dirty in my ear while holding ✊🏻 (like wet or fingering and boobie stuff)For five minutes.😆" },
+                { title: "Truth", text: "Was that time did i cumm on your👅?" },
+                { title: "Dare", text: "Tell me how should i eat you for next 15 minute without kissing lips😤" },
+                { title: "Truth", text: "What was the pic you wanted to give me but stop yesterday 📸" },
+                { title: "Dare", text: "Sit on mini Nayak and and kissing for 5 minutes😘😘." },
+                { title: "Truth", text: "How many dark video limit i has?👁️👁️" },
+                { title: "Dare", text: "Give me massage by your boobies😁😆😁." },
+                { title: "Truth", text: "Was your plan to finger too? bcuz i thought it was close while i was 👅" },
+                { title: "Dare", text: "use my hands for rubbing Kukku's property  (all) for 5 minute🖖🏻" },
+                { title: "Truth", text: "Tell me how you imagined kissing and fingering when I'll cum rajkot?Like i know you were planning that too☝🏻." },
+                { title: "Dare", text: "Let me tie your hands together and Tell me where to kiss 23 expect face 👀💋" },
+                { title: "Truth", text: "if we were on together on same room then still everything goes like yesterday as far or not .👀" },
+                { title: "Dare", text: "while sitting on mini Nayak, its Milk timeeeeee 😁." },
+                { title: "Truth", text: "How would you like fingering by licking or my finger 👅👀?" },
+                { title: "Dare", text: "Kiss me with your Lower lips 23 times and make me suffocated 😏" },
+                { title: "Truth", text: "Was the yesterday was the wettest day of your life😤✨📸?" },
+                { title: "Dare", text: "Go right now and send 10 dark pic in 10 angles or 3 dark video..👀👀" },
+                { title: "The Finisher", text: "I dare us to eat eachother for hour or much 😤." }
+            ];
+
+            const roman = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI","XXII","XXIII"];
+
+            const container = document.getElementById('list-container');
+            dares.forEach((dare, i) => {
+                document.write(`
+                    <input type="checkbox" id="d${i}" class="dare-input">
+                    <label for="d${i}" class="dare-row">
+                        <div class="card-inner">
+                            <div class="front">
+                                <div class="indicator"></div>
+                                <h2>${roman[i]}</h2>
+                            </div>
+                            <div class="back">
+                                <h3>${dare.title}</h3>
+                                <p>${dare.text}</p>
+                            </div>
+                        </div>
+                    </label>
+                `);
+            });
+        </script>
+
+    </div>
+
+    <footer>—Horny—</footer>
+
+</body>
+</html>
