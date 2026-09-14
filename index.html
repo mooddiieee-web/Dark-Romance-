@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 23 Desires </title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#8b1a1a">
+<link rel="apple-touch-icon" href="icons/icon-180x180.png">
+    <title>T or D</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Poppins:wght@300;600&display=swap');
 
@@ -190,6 +193,15 @@
     </div>
 
     <footer>—Horny—</footer>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('SW registered:', reg.scope))
+        .catch(err => console.error('SW registration failed:', err));
+    });
+  }
+    </script>
 
 </body>
 </html>
